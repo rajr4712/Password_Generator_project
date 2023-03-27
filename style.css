@@ -1,0 +1,319 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/*this all color we use so ise yha store kara liye*/
+:root {
+
+    --dk-violet: hsl(268, 75%, 9%);
+    --lt-violet: hsl(268, 47%, 21%);
+    --lt-violet2: hsl(281, 89%, 26%);
+    --vb-violet: hsl(285, 91%, 52%);
+    --vb-violet2: hsl(290, 70%, 36%);
+  
+    --vb-yellow: hsl(52, 100%, 62%);
+  
+  
+    --pl-white: hsl(0, 16%, 92%);
+  
+    --vb-cyan: hsl(176, 100%, 44%);
+    --vb-cyan2: hsl(177, 92%, 70%);
+    --dk-text: hsl(198, 20%, 13%);
+}
+
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:left;                  /*justify-content: center;*/
+    gap:10rem;                          /*its extra add to for position set*/
+    background-image: url(https://imgs.search.brave.com/2J6akDg41kN7F0XL0M-yo3C1sgEeAZ-m7adnPPrU8jQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9pMi53/cC5jb20vYmFja2dy/b3VuZDRmcmVlLmNv/bS9kb3dubG9hZC9i/bHVlX3Zpb2xldF9w/dXJwbGVfMTY3MDYx/MzQ3NC5qcGc_cT0x/MDA);
+    /*background me jo color hai wo gradient me hai */
+    /* background: linear-gradient(231deg, rgba(22, 6, 40, 1) 0%, rgba(52, 28, 79, 1) 50%, rgba(88, 7, 125, 1) 100%);
+     */
+     
+}
+ 
+/*giphy image add*/
+.gif {
+    display: flex;
+    width:400px;
+    height: 300px;
+    margin-bottom: 450px;
+}
+
+/*container jiske under all thing column wise center me hai */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 450px;
+}
+
+/*for heading text PASSWORD GENERATOR*/
+h1 {
+    color: var(--pl-white);
+    opacity: 0.75;
+    text-transform: uppercase;          /*TEXT IN UPPERCASE */
+    letter-spacing: 2px;               /*every character k bich ka space */ 
+    text-align: center;
+    line-height: 1.2;
+}
+
+/*Password show or Text and copy code wala div container */
+.display-container {
+    position: relative;                          /*relative coz placeholder and copy button text iske under hai so they are relative  */
+    background-color: var(--dk-violet);
+    border-radius: 1rem;                                 /*border rounded hai dts y */
+    border-bottom: 0.35rem solid var(--lt-violet2);     /*border bottom ka visible k liye */
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+
+/* PASSWORD container jaha pasword enter hoga uske LIYE */
+.display { 
+    width: 100%;                        /* container ka pura width le lega*/         
+    background-color: transparent;    
+    padding: 1.15rem 1rem;
+    color: var(--vb-yellow);            /*display container ka border charo side se invisible ho jaye*/
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border:none;                    
+}
+  
+
+/*Password placeholder text k liye */
+.display::placeholder {
+    position:absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height:30px;
+    color:var(--vb-yellow);
+    opacity: 0.65;
+    text-transform: uppercase;
+    transform: translateY(-50%);      /* Password text ko vertivally upar shift krane k liye */
+}
+
+/*for copy button image k liye*/  
+.display-container button { 
+    position:absolute;             /*its comes in display conntainer so its absolute */
+    top:50%; 
+    right:1.5rem;
+    transform: translateY(-50%);       /* copy button ko vertivally upar shift krane k liye */
+}
+
+/*in this div container Password length,slide line, all 4 checkbox of pasword hint,strength text,Generate password div*/
+.input-container{
+    width:100%;                          /*container ka full width le liya */
+    background-color: var(--dk-violet);
+    border-radius: 1rem;
+    padding: 2rem;
+    border-bottom: 0.35rem solid var(--lt-violet2);
+}
+
+/* Password length Text and uski length no container */
+.length-container {
+    display: flex;                      /* flex and space between coz both are at extreme end position horizontally */
+    justify-content: space-between;
+    align-items: center;              /*container me top bottom se center me show ho */
+}
+
+/*THIS is for Password length text acess in new way, we can also give a id in html page and acces this */
+.length-container p:nth-child(1) {
+    color:var(--pl-white);
+    font-size: 1.5rem;
+}
+
+
+/*Password length no acesss */
+.length-container p:nth-child(2) {
+    color:var(--vb-yellow);
+    font-size: 1.5rem;
+}
+
+/*Strength Text wala Container and red circle wala container */
+.strength-container {
+    display: flex;                   /*flex and space-between coz both are at extreme end postion in container */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+
+/*strength TEXT K LIYE */
+.strength-container p{
+    color:var(--pl-white);         
+    font-size: 1.5rem;
+}
+
+/*FOR CICRCLE BUTTON */
+.indicator {               /*its visible when u create a passworrd , it determine pass is weak, strong, normal */
+    width:1.5rem;
+    height:1.5rem;
+    border-radius:50%;         /*for circle banane k liye */
+}
+
+/* FOR Generate PASSWORD BUTTON AND GENERATE PASSWORD TEXT  */
+.generateButton {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--vb-violet);
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid var(--vb-yellow);    /*nborder k bottom me violet color hai */ 
+    text-transform: uppercase;                     /*all charcter in uppercase me */
+    letter-spacing: 1px;
+    color: var(--vb-yellow);            /*Text color is yellow */
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+/*for ALL input checkbox div container */
+.check {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;          /*margin from top and bottom se */
+    gap: 0 1rem;           /* checkbox button and text k bich ka gap horizontally 1 rem.verticall and horizontal gap given */
+}
+
+
+/*input checkbox k liye */
+.check input{
+    appearance: none;           /*WE DONT WANT BROWSER DEFAULT STYLE OF CHECKBOX SO Appereance none, hum checkboz ko apne tarike se style krenge dts y  */
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--vb-cyan);      
+    cursor: pointer;                     
+    position: relative;                  /*position relative coz tick isme aayega jo absolute hoga */
+    border-radius: 0.35rem;
+}
+
+
+/*when checked a checkbox */
+.check input:checked{
+    background-color: var(--vb-cyan);
+}
+
+
+.check input:checked::before {           /*jaise hi checkbox click ho usme tick aaye phle */
+    content: '✔';                     /*tick:go to google search tick character and copy tick by click and paste here */
+    position: absolute;                 /*its absolute coz overlap hai checkbox input box me dts y box is relative */
+    color: var(--dk-text);
+    font-size:1.05rem;
+    font-weight: 600;
+    left:50%;
+    top:-3.5px;
+    transform: translateX(-50%)  translateY(10%);      /*tick postion ko adjust krne k liye horizontally and vertically*/
+}
+
+/*Label text k liye */
+.check label {
+    color: var(--pl-white);
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+}
+
+/*copy wale button image k liye */
+.copyBtn{
+    background-color: transparent;       /*background nhi aayega copy button ka */
+    border:none;
+    outline:none;
+}
+
+
+/*when copy  password generate text then upar copy button k upaR COPIED likh k aata hai */
+.tooltip {
+    position: absolute;
+    background-color: var(--vb-violet2);
+    color: var(--vb-yellow);
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+  }
+  
+  /*when active then show copied text text  */
+  .tooltip.active {
+    opacity: 1;                 /*starting me opacity 0 in loc 234 me when active then show so opacity 1 here.*/
+    transform: scale(1);
+  }
+
+/* for slider  line */
+.slider{
+    appearance: none;                     /*we dont want browser by default slider style*/
+    width:100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-color: var(--lt-violet);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(var(--vb-violet), var(--vb-violet));
+    border:none;
+    outline:none;               /*border k bahar charo side ka line is outline */
+    z-index:-1;
+}
+/*its use to acess slider k upar circle jis se aage piche kr rhe hai*/
+.slider::-webkit-slider-thumb {      
+    position:relative;                /*position relative se slider thumb pe slider ki outline yellow color ki nhi aa rhi hai */
+    z-index:1;
+    appearance: none;
+    height:2rem;
+    width:2rem;
+    border-radius: 50%;
+    background-color: var(--vb-yellow);
+    cursor:pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+    transition: all 100ms ease-in;
+}
+
+/*slider ko select krne par (cick) krne slider ki outline yellow color ki aa rhi hai*/
+.slider:focus{   
+    outline: 3px solid var(--vb-yellow);
+}
+
+/*WHEN HOVER on slider thumb then it become black color ,outline of yellow color and shadow */
+.slider::-webkit-slider-thumb:hover{
+    outline: 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+}
+
+
+/*Homework -> Explore below code */
+/* .slider::-moz-range-thumb {
+    position: relative;
+    z-index: 1;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: var(--vb-yellow);
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb:hover {
+    outline: 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+  } */
