@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--wrapper full screen size ka class jiske under Whole thing come-->
+    <wrap class="wrapper">
+    
+        <div class="gif">
+        <iframe src="https://giphy.com/embed/11w04LB6klGtcA" width="380" height="271" frameBorder="0" alt="#">
+                </iframe> </div>
+    
+    <!--IN THIS CONTAINER WHOLE CONTENT COME IN COLUMN WISE -->
+     <div class="container">
+      <h1>Password Generator 🔐 👨‍💻</h1>
+        
+    <!-- Password show and copy code wala div container-->
+            <div class="display-container">
+       
+    <!--readonly means we can not write pass its autmoatic generate, data-passwordDisplay: its CUSTOM ATTRIBUTE 
+    iski help se hum palcehoder ko js code me fetch karenge, we also use class,id,tag . its new method!    -->
+                <input readonly placeholder="Password" class="display" data-passwordDisplay> 
+                <button class="copyBtn" data-copy>
+                    <span class="tooltip" data-copyMsg></span>    <!--dat-copyMsg is also CUSTOM ATTRIBUTE-->
+                    <img src="./assets/copy.svg" alt="copy" width="23" height="23"> </button>
+    
+            </div>
+    
+    
+    <!--in this div container Password length,slide line, all 4 checkbox of pasword hint,strength text,Generate password div-->
+            <div class="input-container">
+    
+                <!--password length section-->
+                <div class="length-container">
+                    <p>Password Length</p>
+                    <p data-lengthNumber>0</p>     <!--data-lengthNumber is custom attribute coz 0 value is change everytime so we have to apply some js code on it dts y we giving -->
+                </div>
+                
+        
+                <!--slider line-->
+      <!-- min =1 ,max=20 means min 1 digit ka nd max 20 digit ka password banega , slide krne par step-1 length aage badhega-->
+         <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider> <!--w3 school me v slider syntax aise hi hai-->
+    
+            
+         <!-- checkboxes container-->
+                <div class="check">
+                    <input type="checkbox" id="uppercase">
+                    <label for="uppercase">Includes Uppercase letters</label>
+                </div>
+    
+                <div class="check">
+                    <input type="checkbox" id="lowercase">
+                    <label for="lowercase">Includes Lowercase letters</label>
+                </div>
+    
+                <div class="check">
+                    <input type="checkbox" id="numbers">
+                    <label for="numbers">Includes Numbers </label>
+                </div>
+    
+                <div class="check">
+                    <input type="checkbox" id="symbols">
+                    <label for="symbols">Includes Symbols </label>
+                </div>
+    
+            
+        <!-- strength section-->
+                <div class="strength-container">
+                    <p>Strength</p>
+                    <div class="indicator" data-indicator></div>  <!--circle wala button jo password generate krne par siganal deta hai-->
+                </div>
+    
+                
+            <!-- generate password-->
+                <button class="generateButton">Generate Password</button>
+    
+            </div>
+    
+        </div>
+    </wrap>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
